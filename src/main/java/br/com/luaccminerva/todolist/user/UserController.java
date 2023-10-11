@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
 import lombok.var;
 
 /*
@@ -42,7 +43,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuário já existe!");
         }
 
-        var passwordHashred = Bcrypt.withDefaults().hashToString(12,userModel.getPassword().toCharArray());
+        var passwordHashred = BCrypt.withDefaults().hashToString(12,userModel.getPassword().toCharArray());
 
         userModel.setPassword(passwordHashred);
 
