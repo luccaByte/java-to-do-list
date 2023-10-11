@@ -13,11 +13,11 @@ import lombok.var;
 public class TaskController {
 
     @Autowired
-    private ITaskRepossitory;
+    private ITaskRepository taskRepository;
 
     @PostMapping("/")
     public TaskModel create(@RequestBody TaskModel taskModel) {
         var task = this.taskRepository.save(taskModel);
-        return taskModel;
+        return task;
     }
 }

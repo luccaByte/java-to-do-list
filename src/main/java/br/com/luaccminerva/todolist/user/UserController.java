@@ -31,7 +31,7 @@ public class UserController {
     */
 
     @Autowired // gerenciamento todo ciclo de vida
-    private iUserRepository userRepository; //chamada do repositório
+    private IUserRepository userRepository; //chamada do repositório
 
     @PostMapping("/")
     public ResponseEntity create (@RequestBody UserModel userModel) {
