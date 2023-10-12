@@ -4,10 +4,6 @@ import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public class ITaskRepository extends JpaRepository<TaskModel, UUID>{
-
-	public Object save(TaskModel taskModel) {
-		return null;
-	}
-    
+public interface ITaskRepository extends JpaRepository<TaskModel, UUID>{
+	
 }
